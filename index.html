@@ -1,0 +1,82 @@
+<!--
+Proyecto: Web Game "¡Investigador, investiga!"
+Estructura de archivos:
+/web-game-investiga/
+│
+├── index.html       (página principal)
+├── style.css        (estilos globales)
+├── script.js        (lógica JavaScript)
+└── assets/
+    └── beep.mp3     (sonido de pitido de 2s)
+-->
+
+<!-- File: index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡investiga investigador!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>¡Investiga Investigador!</h1>
+  </header>
+  <main>
+    <section id="config">
+      <form id="setup-form">
+        <fieldset>
+          <legend>¿Cuántos jugadores?</legend>
+          <label><input type="radio" name="players" value="2" required> 2</label>
+          <label><input type="radio" name="players" value="3"> 3</label>
+        </fieldset>
+        <div class="buttons">
+          <button type="submit" class="btn">Siguiente</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="dice-section" class="hidden">
+      <p id="order-instruction" class="instruction"></p>
+      <div id="dice-counters"></div>
+      <div class="buttons">
+        <button id="roll-dice" class="btn">Tirar dados</button>
+        <button id="to-problem" class="btn hidden">Continuar</button>
+      </div>
+      <p id="player-number" class="player-number"></p>
+      <pre id="order-results" class="order-results"></pre>
+    </section>
+
+    <section id="problem-section" class="hidden">
+      <h2>Selecciona un problema</h2>
+      <form id="problem-form">
+        <label><input type="radio" name="problem" value="intoxicacion" required> Intoxicación en la Cafetería</label>
+        <label><input type="radio" name="problem" value="maquinaria"> Falla en línea de ensamblaje</label>
+        <div class="buttons">
+          <button type="submit" class="btn">Siguiente</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="deck-section" class="hidden">
+      <h2 id="turn-label"></h2>
+      <form id="deck-form">
+        <div id="deck-options" class="deck-grid"></div>
+        <div class="buttons">
+          <button type="submit" class="btn">Aceptar</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="game-section" class="hidden">
+      <h2 id="player-turn"></h2>
+      <div id="timer">0</div>
+      <div class="buttons">
+        <button id="start-roll" class="btn">Tirar dados</button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
