@@ -142,7 +142,7 @@ function startTimer() {
 }
 
 function beep() {
-  const audio = new Audio('assets/beep.mp3');
+  const audio = new Audio('beep.mp3');
   audio.play();
 }
 
